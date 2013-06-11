@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Knowledge Base</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <ul class="nav"> 
+          <% if current_user %>
+            <!-- User menu here -->
+            <li class="<%= menu_active('Home') %>"><%= link_to "Home", '#' %></li>
+            <li class="<%= menu_active('Knowledges') %>"><%= link_to "Knowledges", knowledges_path %></li>
+            <li class="<%= menu_active('Resources') %>"><%= link_to "Resources", '#' %></li>
+            <li class="<%= menu_active('Others') %>"><%= link_to "Others", '#' %></li>
+            <li class="<%= menu_active('About Us') %>"><%= link_to "AboutUs", '#' %></li>
+            
+          <% end %>
+          
+        </ul>
+        <ul class="nav pull-right">
+          <% if current_user %>            
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <%= current_user.uname %>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">           
+                <li><%= link_to "Logout", destroy_user_session_url, :method => :delete %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Login", new_user_session_url %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>  
+  <div class="container">
+    
+    <div id="notifications">
+    <% [:error, :notice, :alert].each do |type| %>
+      <% if flash[type] %>
+        <%= content_tag :div, class: "alert #{alert_class(type)}" do %>
+        <a class="close" data-dismiss="alert">x</a>
+        <%= flash[type] %>
+        <% end %>
+      <% end %>
+    <% end %>
+    </div>
+    
+    
+    
+    <div class="row">
+      <div class="span12">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

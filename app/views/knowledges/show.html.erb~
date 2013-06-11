@@ -1,0 +1,17 @@
+
+
+<p>
+  <strong>Name:</strong>
+  <%=  @knowledge.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=  @knowledge.description %>
+</p>
+
+
+<p>
+  <%= link_to "Edit", edit_knowledge_path(@knowledge) %> |
+  <%= link_to "Destroy", @knowledge, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", knowledges_path %>
+</p>

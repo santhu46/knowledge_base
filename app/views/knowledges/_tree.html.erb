@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+
+		<link href="bootstrap-tree/css/bootstrap-tree.css" rel="stylesheet">
+		<style>
+
+.sidebar-nav {
+    padding: 9px 0;
+}
+		</style>
+    
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="well">
+                      <ul class="tree">
+<% @categories.each do |name|%>
+                        <li>
+                          <a href="#" role="branch" class="tree-toggle closed" data-toggle="branch" data-value="Bootstrap_Tree"><%= name.name %></a>
+<% if name.name == "language" %>
+                     <ul class="branch ">
+<% @languages.each do |name|%>
+     
+
+                              <li><a href="#" role="leaf" id="nut"><%=name.name %></a></li>
+<% end %>                           
+                          </ul>
+  </li>
+<li>
+
+<% elsif name.name == "framework" %>
+
+                          <ul class="branch">
+<% @frameworks.each do |name|%>
+                              <li><a href="#" role="leaf" id="nut"><%=name.name %></a></li>
+   <% end %>                          
+                          </ul>
+
+<% end %>
+        </li>
+                       <% end %>           
+                      </ul>
+                    </div><!--/.well -->
+                  </div><!--/span-->
+                  <div class="span9" id="mainContent">
+                      <div class="row-fluid">
+                          <div class="well span8" id="editorArea">
+                              <h1>Bootstrap Tree</h1>
+                              <p>This is a template is a basic example of Bootstrap Tree. <a href="http://twitter.github.com/bootstrap/index.html">Bootstrap</a> is an excellent front-end framework from the guys at Twitter. This simple component is an add on component for rendering a basic Tree with some HTML configuration.</p>
+  							<p>Click a node, on the left, to see it in action.</p>
+                              <!-- <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p> -->
+                          </div>
+                      </div>
+                      <div class="span8" id="reporter"></div>
+                  </div>
+            </div>
+        </div>
+
+
+        <script src="bootstrap-tree/js/bootstrap-tree.js"></script>
+        <script src="example.js"></script>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+class CreateLanguages < ActiveRecord::Migration
+  def change
+    create_table :languages do |t|
+      t.string :name
+      t.string :description
+      t.integer :knowledge_id
+      t.integer :language_id
+      t.integer :framework_id
+      t.integer :other_id
+      t.integer :server_id
+      t.integer :resource_id
+
+      t.timestamps
+    end
+  end
+end

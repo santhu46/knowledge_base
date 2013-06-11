@@ -1,0 +1,6 @@
+
+                <p> Welcome User, <%= current_user.uname %>,
+
+<%= render 'menu' %>
+<%= render 'tree' %>
+<% redirect_to languages_path %>

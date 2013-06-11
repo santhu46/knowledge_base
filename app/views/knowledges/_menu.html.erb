@@ -1,0 +1,14 @@
+<ul class="nav nav-tabs">
+<% @categories.each do |name| %>
+  <li class="<%= bar_active(name.name.pluralize) %>">
+    <%= link_to '#' do %>
+
+        <i class="icon-list-alt"></i>
+
+	<%= name.name.pluralize %>
+
+    <% end %>
+  </li>
+  
+     <% end %> 
+</ul>

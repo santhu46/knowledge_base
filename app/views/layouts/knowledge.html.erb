@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Knowledge Base</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+<style>
+ body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+	  .nav li {
+	  padding-top: 5px;
+	  }
+	  .leaderboard {
+  padding: 60px;
+  margin-bottom: 30px;
+  background-image: url('images/gridbg.gif');
+  background-repeat:repeat;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.leaderboard h1 {
+  font-size: 40px;
+  margin-bottom: 5px;
+  line-height: 1;
+  letter-spacing: -1px;
+  color:#FF6600;
+}
+.leaderboard p {
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 27px;
+}
+
+</style>
+</head>
+<body>
+<script>
+$(document).ready(function(){
+$(".test").click(function(){
+$(".test").addClass("active");
+alert("works")
+})
+alert("jh");
+});
+</script>
+<div class="navbar navbar-fixed-top">  
+<div class="navbar-inner">  
+<div class="container">  
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">  
+<span class="icon-bar"></span>  
+<span class="icon-bar"></span>  
+<span class="icon-bar"></span>  
+</a>  
+<a class="brand" href="#"><img src="/images/lo.png" width="111" height="15" alt="knowledgebase logo" /></a>  
+<div class="nav-collapse">  
+<ul class="nav"> 
+<li class="active"><a href="#">Home</a></li>   
+<li class=""><a href="#">Knowledges</a></li>  
+<li class="test"><a href="#" >Resources</a></li>  
+<li><a href="#">Graphs</a></li>
+
+</ul> 
+<ul class="nav pull-right"> 
+<li class="dropdown">  
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <span class="caret"></span>   
+</a> 
+     <ul class="dropdown-menu">
+              <li>  <%= link_to "Logout", "#" %></li>
+	</ul>
+	</li>
+  </ul>   
+</div><!--/.nav-collapse -->
+</div>  
+</div>  
+</div>  
+<div class="container">  
+<!-- Main hero unit for a primary marketing message or call to action -->  
+<div class="leaderboard">  
+<h1>Here you can check your knowledge skills</h1>  
+<p>It Contains various languages that you know and it provides various online and offline resources to improve knowledge.</p>  
+
+</div>  
+<!-- Example row of columns -->  
+<div class="row">  
+<div class="span4">  
+<h2>Graphs</h2>  
+<p>Varoius graphs provides you to check in which your are strong which knowledge has highly occupied in this tutorials. </p>  
+<p><a class="btn btn-success btn-large" href="#">View apps</a></p>  
+</div>  
+<div class="span4">
+<h2>Developer Guide</h2>  
+<p> Most of the snippets included in this site are real world examples or you can easily get start with that . </p>  
+<p><a class="btn btn-success btn-large" href="#">View apps</a></p>  
+</div>  
+<div class="span4">  
+<h2>PHP MySQL Apps</h2>  
+<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>  
+<p><a class="btn btn-success btn-large" href="#">View apps</a></p>  
+</div>  
+</div>  
+<div class="row"><br>
+ <div class="span12">
+
+        <%= yield %>
+      </div>
+ </div>
+
+<hr>  
+<footer>  
+<p>santhu© Company 2012</p>  
+</footer>  
+</div> <!-- /container -->
+
+
+
+  
+</body>
+</html>
